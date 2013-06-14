@@ -6,21 +6,20 @@
     android:orientation="vertical"
     tools:context=".MainActivity" >
 
-    <ListView
-        android:id="@+id/listView1"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="214dp"
-        android:layout_marginRight="140dp"
-        android:layout_weight="1" >
-
-    </ListView>
-
     <Button
         android:id="@+id/newButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="true"
+        android:onClick="newClicked"
+        android:text="New championship" />
+
+    <Button
+        android:id="@+id/editButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:onClick="newChampionshipClicked"
-        android:text="New championship" />
+        android:enabled="false"
+        android:onClick="editClicked"
+        android:text="Edit/view championship" />
 
 </LinearLayout>

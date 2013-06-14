@@ -1,19 +1,21 @@
 package les.tacacaesi;
 
-public class Championship {
+import java.io.Serializable;
 
+public class Championship implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	private String name;
 	private int contestantsNumber;
 	private boolean isFinalized;
 	private String championName;
 
-	public Championship(String name, int contestantsNumber) throws Exception {
+	public Championship(String name, int contestantsNumber) throws IllegalArgumentException {
 		if (name == null || name.equals("")) {
-			throw new Exception("Nome de Campeonato invalido");
+			throw new IllegalArgumentException("Nome de Campeonato invalido");
 		}
 		if (contestantsNumber <= 0) {
-			throw new Exception(
-					"Numero de participantes menor que o minimo necessario");
+			throw new IllegalArgumentException("Numero de participantes menor que o minimo necessario");
 		}
 		this.name = name;
 		this.contestantsNumber = contestantsNumber;
@@ -27,7 +29,7 @@ public class Championship {
 		return championName;
 	}
 
-	public int getContestants() {
+	public int getContestantsCount() {
 		return contestantsNumber;
 	}
 
@@ -39,7 +41,7 @@ public class Championship {
 		this.championName = championName;
 	}
 
-	public void setContestants(int contestantsNumber) {
+	public void setContestantsCount(int contestantsNumber) {
 		if (contestantsNumber >= 0)
 			this.contestantsNumber = contestantsNumber;
 	}
