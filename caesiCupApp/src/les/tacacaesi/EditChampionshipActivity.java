@@ -11,7 +11,7 @@ import android.widget.EditText;
 public class EditChampionshipActivity extends Activity {
 	private Championship championship;
 	private int replaceIndex;
-	private EditText nameEdit, manyContestantsEdit;
+	private EditText nameEdit, manyContestantsEdit, winnerEdit;
 	private Button finalizeButton;
 	
 	@Override
@@ -30,9 +30,11 @@ public class EditChampionshipActivity extends Activity {
 		
 		nameEdit = (EditText)findViewById(R.id.nameEdit);
 		manyContestantsEdit = (EditText)findViewById(R.id.manyContestantsEdit);
+		winnerEdit = (EditText)findViewById(R.id.winnerEdit);
 		finalizeButton = (Button)findViewById(R.id.finalizeButton);
 		
 		nameEdit.setText(championship.getName());
+		winnerEdit.setText(championship.getChampionName());
 		manyContestantsEdit.setText(Integer.toString(championship.getContestantsCount()));
 		
 		updateEnableds();
@@ -46,11 +48,13 @@ public class EditChampionshipActivity extends Activity {
 	private void updateEnableds() {
 		finalizeButton.setEnabled(!championship.isFinalized());
 		nameEdit.setEnabled(!championship.isFinalized());
+		winnerEdit.setEnabled(!championship.isFinalized());
 		manyContestantsEdit.setEnabled(!championship.isFinalized());
 	}
 	
 	private void updateChampionship() {
 		championship.setName(nameEdit.getText().toString());
+		championship.setChampionName(winnerEdit.getText().toString());
 		championship.setContestantsCount(Integer.parseInt(manyContestantsEdit.getText().toString()));
 	}
 	

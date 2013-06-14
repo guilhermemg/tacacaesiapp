@@ -44,9 +44,13 @@ public class MainActivity extends Activity {
 					taca.getChampionships().clear();
 					taca.getChampionships().add(cs);
 					
+					newButton.setEnabled(false);
 					editButton.setEnabled(true);
 				} else {
 					taca.getChampionships().set(replace_position, cs);
+					
+					if (cs.isFinalized())
+						newButton.setEnabled(true);
 				}
 			}
 		}
