@@ -14,10 +14,12 @@
         android:onClick="newClicked"
         android:text="New championship" />
 
-    <ListView
-        android:id="@+id/championshipList"
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent" >
-    </ListView>
+    <Button
+        android:id="@+id/editButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:onClick="editClicked"
+        android:text="Edit/view championship" />
 
 </LinearLayout>
