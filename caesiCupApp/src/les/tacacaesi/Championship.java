@@ -1,6 +1,8 @@
 package les.tacacaesi;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Championship implements Serializable {
 
@@ -9,6 +11,7 @@ public class Championship implements Serializable {
 	private int contestantsNumber;
 	private boolean isFinalized;
 	private String championName;
+	private Set<Team> teams;
 
 	public Championship(String name, int contestantsNumber) throws IllegalArgumentException {
 		if (name == null || name.equals("")) {
@@ -19,6 +22,7 @@ public class Championship implements Serializable {
 		}
 		this.name = name;
 		this.contestantsNumber = contestantsNumber;
+		this.teams = new HashSet<Team>();
 	}
 
 	public String getName() {
@@ -54,4 +58,20 @@ public class Championship implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	@Override
+	public String toString() {
+		return name + (isFinalized ? " (Finished)" : " (In progress)");
+	}
+	
+	public void addTeam(String nome){
+		
+		this.teams.add(new Team(nome));
+		
+	}
+	
+	public Set<Team> getTeams(){
+		return this.teams;
+	}
+	
 }

@@ -5,9 +5,11 @@ import java.util.List;
 
 public class TacaCaesi {
 	private List<Championship> championships;
+	private TacaCaesiController controller;
 	
-	public TacaCaesi() {
+	public TacaCaesi(TacaCaesiController controller) {
 		this.championships = new ArrayList<Championship>();
+		this.controller = controller;
 	}
 	
 	public TacaCaesi(List<Championship> championships) {
@@ -16,9 +18,5 @@ public class TacaCaesi {
 
 	public List<Championship> getChampionships() {
 		return championships;
-	}
-
-	public void setChampionships(List<Championship> championships) {
-		this.championships = championships;
 	}
 }

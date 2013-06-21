@@ -6,5 +6,7 @@
     <string name="menu_settings">Settings</string>
     <string name="title_activity_new_champion_ship">New Championship</string>
     <string name="title_activity_edit_champion_ship">Edit Championship</string>
+    <string name="title_activity_team_insert">TeamInsert</string>
+    <string name="action_settings">Settings</string>
 
 </resources>

@@ -30,6 +30,10 @@
             android:name="les.tacacaesi.EditChampionshipActivity"
             android:label="@string/title_activity_edit_champion_ship" >
         </activity>
+        <activity
+            android:name="les.tacacaesi.TeamInsert"
+            android:label="@string/title_activity_team_insert" >
+        </activity>
     </application>
 
 </manifest>
